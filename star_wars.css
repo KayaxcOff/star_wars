@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Yıldızlı arka plan */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png'), black;
+    z-index: 1;
+}
+
+/* Kayan metin konteyneri */
+.crawl {
+    position: relative;
+    top: 100%;
+    width: 50%;
+    height: 100%;
+    color: #feda4a;
+    font-size: 1.5em;
+    line-height: 1.8;
+    text-align: justify;
+    transform: perspective(500px) rotateX(25deg);
+    transform-origin: 50% 100%;
+    animation: crawl 60s linear infinite;
+    z-index: 2;
+}
+
+/* Başlık stilleri */
+.title {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.title h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.title h2 {
+    font-size: 2em;
+    font-weight: normal;
+}
+
+/* Animasyon */
+@keyframes crawl {
+    0% {
+        top: 100%;
+        transform: perspective(500px) rotateX(25deg);
+    }
+    100% {
+        top: -600%;
+        transform: perspective(500px) rotateX(25deg);
+    }
+}
